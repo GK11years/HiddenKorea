@@ -27,11 +27,10 @@ def get1000results(keyword):
 
 
 list_1000_url = []
-sur_list = ["서울여행", '서울명소','서울가볼만한곳']
+sur_list = ["서울여행"]
 
 for i in sur_list:
     result = get1000results(i)
     list_1000_url.append(result)
-
-file = open('./tour.json', 'w+')
+file = open('./data/tour.json', 'w+')
 file.write(json.dumps(list_1000_url))
