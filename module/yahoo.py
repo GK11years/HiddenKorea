@@ -14,10 +14,10 @@ request_headers = {
 def remove_tags(results):
     soup = BeautifulSoup(results, "html.parser")
 
-    for data in soup(['style', 'script']):
-        # Remove tags
-        data.decompose()
-        # return data by retrieving the tag content
+    # for data in soup(['style', 'script']):
+    # Remove tags
+    #    data.decompose()
+    # return data by retrieving the tag content
     return ' '.join(soup.stripped_strings)
 
 
