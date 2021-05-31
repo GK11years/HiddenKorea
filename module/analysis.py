@@ -8,7 +8,8 @@ naver_dict = {}
 with open('./data/naver_blog_cr.json', 'r', encoding='utf8') as f:
     naver_blog = json.load(f)
 
-mm.analys(naver_blog,naver_dict)
 
+mm.analys(naver_blog,naver_dict)
 sort_naver_dict = sorted(naver_dict.items(),key=lambda x: x[1], reverse=True)
-print(sort_naver_dict)
+f_2 = open('./data/naver_keyword.json', 'w+', encoding='utf8')
+f_2.write(json.dumps(sort_naver_dict, ensure_ascii=False))

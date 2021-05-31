@@ -2,7 +2,7 @@ import json
 import my_modules as mm
 
 list_100_url = []
-sur_list = ["서울 가볼만한곳"]
+sur_list = ["서울 가볼만한곳", "서울 여행지", "서울 여행", "서울 명소", "서울 볼거리"]
 
 for i in sur_list:
     result = mm.get100results(i)

@@ -6,7 +6,7 @@ from os import close
 from bs4.element import ResultSet
 from bs4 import BeautifulSoup
 
-
+# mecab 이용하여 명사만 추출, count 이용하여 중복 제거
 def analys(cr_list, big_dict):
     mecab = Mecab()
     for i in cr_list:
