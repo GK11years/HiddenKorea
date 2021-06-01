@@ -20,6 +20,7 @@ driver.get("https://translate.google.com/?hl=ko&sl=ja&tl=ko&op=translate")
 
 blog_contents_list = []
 blog_number = 1
+<<<<<<< HEAD
 while True:
     test = driver.find_element_by_class_name("er8xn")
     with open(f"../data/jpblog/{blog_number}.txt", "r") as file:
@@ -48,3 +49,34 @@ while True:
 # print(blog_contents_list)
 with open("../data/jpblog2.json", "w", encoding="utf8") as json_file:
     st_json = json.dump(blog_contents_list, json_file, ensure_ascii=False)
+=======
+try:
+    while True:
+        test = driver.find_element_by_class_name("er8xn")
+        with open(f"../data/jpblog/{blog_number}.txt", "r",encoding="utf8") as file:
+            text = file.read()
+            # print(remove_emoji(text))
+            try:
+                test.send_keys(remove_emoji(text))
+            except:
+                None
+        # time.sleep(5)
+
+        time.sleep(5)
+        my_text = driver.find_elements_by_css_selector(".J0lOec")[0]
+        translated_text = my_text.text
+        blog_contents_list.append(translated_text)
+        print(len(blog_contents_list))
+        test.clear()
+
+        blog_number += 1
+        if blog_number == 275:
+            break
+    
+    with open("../data/jpblog3.json", "w", encoding="utf8") as json_file:
+        st_json = json.dump(blog_contents_list, json_file, ensure_ascii=False)
+
+except:
+    with open("../data/jpblog3.json", "w", encoding="utf8") as json_file:
+        st_json = json.dump(blog_contents_list, json_file, ensure_ascii=False)
+>>>>>>> 9490b3e7dd23569b303b7a835a034db448f3d1a1
