@@ -7,22 +7,33 @@
     <title>Document</title>
     <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
     <style>
-        #main{
+        #main_box{
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction:row;
         }
         .sub{
-            box-sizing: border-box;
+            width: 33%;
+            height: 300px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            /* align-items: center; */
         }
         h2{
             text-align: center;
             align-self: center;
             justify-self: center;
             width: 100%;
+        }
+        section{
+            display: flex;
+            /* text-align: center; */
+            align-self: center;
+            justify-self: center;
+            width: 100px;
+            flex-direction: column;
         }
     </style>
   </head>
@@ -32,59 +43,34 @@
         <h3>Last Update: 06.02.2021{% for subreddit in subreddits_on %}{{subreddit}}, {% endfor %}</h3>
     </header>
     <div id="main_box">
-        <h2>Chart 1</h2>
+        
         <div class="sub">
-            
-            {% for data in data_sum %} 
+            <h2>Korea Top 10</h2>
             <section>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-                <div>10</div>
+                {% for data in korea_list %} 
+                <div>{{data}}</div>
+                {% endfor %}
             </section>
-            {% endfor %}
         </div>
-        <h2>Chart 2</h2>
+<!--  -->
+        
         <div class="sub">
-            
-            {% for data in data_sum %} 
+            <h2>Japan Top 10</h2>
             <section>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-                <div>10</div>
+                {% for data in japan_list %} 
+                <div>{{data}}</div>
+                {% endfor %}
             </section>
-            {% endfor %}
         </div>
-        <h2>Chart 3</h2>
+        <!--  -->
+        
         <div class="sub">
-            
-            {% for data in data_sum %} 
+            <h2>Hidden Top 10</h2>
             <section>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-                <div>10</div>
+                {% for data in hidden_list %} 
+                <div>{{data}}</div>
+                {% endfor %}
             </section>
-            {% endfor %}
         </div>
     </div>
   </body>

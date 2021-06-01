@@ -1,5 +1,6 @@
 import json
 
+
 def chart():
     with open('./data/jb_keyword.json', 'r', encoding='utf8') as f_jb:
         jb_blog = json.load(f_jb)
@@ -18,8 +19,8 @@ def chart():
         hidden_blog.append(i[0])
 
     hidden_list = hidden_blog
-    for i in hidden_blog:
-        if i in sub_list:
+    for i in sub_list:
+        if i in hidden_list:
             hidden_list.remove(i)
 
     jb_list = []
@@ -33,8 +34,9 @@ def chart():
     kb = kb_list[:10]
     jb = jb_list[:10]
     hd = hidden_list[:10]
-    chart_list = {"korea" : kb,"japan" : jb, "hidden" : hd }
+    chart_list = {"korea": kb, "japan": jb, "hidden": hd}
 
     return(chart_list)
+
 
 print(chart())
