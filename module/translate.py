@@ -41,10 +41,10 @@ while True:
     test.clear()
 
     blog_number += 1
-    if blog_number == 101:
+    if blog_number == 42:
         break
 # print(my_text.text)
 
 # print(blog_contents_list)
-with open("../data/jpblog.json", "w", encoding="utf8") as json_file:
+with open("../data/jpblog2.json", "w", encoding="utf8") as json_file:
     st_json = json.dump(blog_contents_list, json_file, ensure_ascii=False)
