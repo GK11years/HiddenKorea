@@ -3,7 +3,6 @@ from collections import Counter
 import requests
 from urllib.parse import quote
 from os import close
-from bs4.element import ResultSet
 from bs4 import BeautifulSoup
 
 # mecab 이용하여 명사만 추출, count 이용하여 중복 제거
@@ -20,7 +19,7 @@ def analys(cr_list, big_dict):
                     big_dict[key_] += 1
                 except KeyError:
                     big_dict[key_] = 1
-
+    return True
 
 client_id = "Y7yiVWADNUvhJBbOKnpc"
 client_secret = "O59KsUaLyt"
@@ -62,3 +61,13 @@ def pop_text(url_list):
         None
     
     return text_str
+
+def sameword(cr_list, word_list, count_dict):
+    for cr in cr_list:
+        for wr in word_list:
+            if wr in cr:
+                try:
+                    count_dict[wr] += 1
+                except KeyError:
+                    count_dict[wr] = 1
+    return True
