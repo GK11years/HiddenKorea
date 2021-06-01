@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 hidden
+.vscode
 chromedriver
