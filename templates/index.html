@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+    <style>
+        #main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sub{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2{
+            text-align: center;
+            align-self: center;
+            justify-self: center;
+            width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1>Hidden Korea</h1>
+        <h3>Last Update: 06.02.2021{% for subreddit in subreddits_on %}{{subreddit}}, {% endfor %}</h3>
+    </header>
+    <div id="main_box">
+        <h2>Chart 1</h2>
+        <div class="sub">
+            
+            {% for data in data_sum %} 
+            <section>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+            </section>
+            {% endfor %}
+        </div>
+        <h2>Chart 2</h2>
+        <div class="sub">
+            
+            {% for data in data_sum %} 
+            <section>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+            </section>
+            {% endfor %}
+        </div>
+        <h2>Chart 3</h2>
+        <div class="sub">
+            
+            {% for data in data_sum %} 
+            <section>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+            </section>
+            {% endfor %}
+        </div>
+    </div>
+  </body>
+</html>
