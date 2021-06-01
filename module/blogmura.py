@@ -20,7 +20,7 @@ request_headers = {
 
 
 ###
-page_number = 1
+page_number = 3
 url_list = []
 word = "ソウル旅行"
 
@@ -39,18 +39,18 @@ while True:
     print(len(url_list))
 
     page_number += 1
-    if page_number == 3:  # pagination
+    if page_number == 11:  # pagination
         break
 
 ###
 blog_number = 1
 for URL in url_list:
-    results = requests.get(URL, headers=request_headers)
+    results = requests.get(URL, headers=request_headers, verify=False)
     results.encoding = "UTF-8"
     test_ = remove_tags(results.text)
     print(len(test_))
 
-    # with open(f"../data/jpblog/{blog_number}.txt", "w") as file:
-    #    text = file.write(test_)
+    with open(f"../data/jpblog/{blog_number}.txt", "w", encoding='utf8') as file:
+       text = file.write(test_)
 
     blog_number += 1
